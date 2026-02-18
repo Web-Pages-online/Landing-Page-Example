@@ -939,3 +939,135 @@ ul {
         display: none;
     }
 }
+/* Estilos base del hero */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+/* Scroll indicator con el estilo específico que solicitaste */
+#section09 {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#section09 a {
+    display: block;
+    width: 30px;
+    height: 50px;
+    position: relative;
+    text-decoration: none;
+}
+
+#section09 a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Animación para el puntito interior */
+#section09 a span::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 4px;
+    height: 10px;
+    margin-left: -2px;
+    background: #fff;
+    border-radius: 2px;
+    animation: scrollMove 2s infinite;
+}
+
+/* Efecto hover */
+#section09 a:hover span {
+    border-color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Animación de scroll */
+@keyframes scrollMove {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+}
+
+/* Estilos para la sección destino */
+.next-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.next-section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.next-section p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    #section09 {
+        bottom: 20px;
+    }
+    
+    #section09 a {
+        width: 25px;
+        height: 40px;
+    }
+    
+    #section09 a span {
+        width: 25px;
+        height: 40px;
+        margin-left: -12.5px;
+    }
+    
+    #section09 a span::after {
+        width: 3px;
+        height: 8px;
+        top: 8px;
+    }
+}
