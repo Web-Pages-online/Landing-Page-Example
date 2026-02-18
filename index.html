@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEGANCE | Premium Experience</title>
+    <meta name="description" content="Experience the pinnacle of luxury and design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">ELEGANCE</a>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Inicio</a></li>
+                <li><a href="#features" class="nav-link">Excelencia</a></li>
+                <li><a href="#about" class="nav-link">Legado</a></li>
+                <li><a href="#gallery" class="nav-link">Colección</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <a href="#contact" class="btn-primary desktop-only">Concierge</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <span class="eyebrow fade-in-up">Redefiniendo el Lujo</span>
+                <h1 class="hero-title fade-in-up delay-1">La Esencia de<br>la <em>Perfección</em></h1>
+                <p class="hero-subtitle fade-in-up delay-2">Donde la exclusividad se encuentra con el diseño atemporal.
+                    Una experiencia reservada para quienes exigen lo extraordinario.</p>
+                <div class="hero-actions fade-in-up delay-3">
+                    <a href="#contact" class="btn-primary">Solicitar Acceso</a>
+                    <a href="#gallery" class="btn-secondary">Ver Colección</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Descubrir</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <section id="features" class="features section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subtitle">Nuestros Pilares</span>
+                    <h2 class="title">Excelencia Inigualable</h2>
+                    <div class="separator mx-auto"></div>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                <path d="M2 12h20" />
+                            </svg>
+                        </div>
+                        <h3>Diseño Global</h3>
+                        <p>Inspiración extraída de las capitales de moda y arquitectura más influyentes del mundo,
+                            fusionando culturas en una estética singular.</p>
+                    </div>
+                    <div class="feature-card reveal delay-1">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3>Calidad Premium</h3>
+                        <p>Materiales seleccionados meticulosamente: mármol italiano, maderas exóticas y metales
+                            preciosos para garantizar una durabilidad superior.</p>
+                    </div>
+                    <div class="feature-card reveal delay-2">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                            </svg>
+                        </div>
+                        <h3>Exclusividad</h3>
+                        <p>Acceso estrictamente reservado a piezas únicas y ediciones limitadas creadas para definir
+                            estatus y distinción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section-padding bg-alt">
+            <div class="container about-grid">
+                <div class="about-content reveal-left">
+                    <span class="subtitle">Nuestra Historia</span>
+                    <h2 class="title">Un Legado de Innovación</h2>
+                    <div class="separator"></div>
+                    <p>ELEGANCE nació de una visión audaz: redefinir los estándares del lujo contemporáneo. Desde
+                        nuestros inicios en un pequeño taller hasta nuestra presencia global, nos hemos dedicado a
+                        perfeccionar el arte de vivir bien.</p>
+                    <p>Cada detalle de nuestra colección es un testimonio de la artesanía experta y la visión
+                        vanguardista. Creemos que el verdadero lujo reside en la simplicidad ejecutada con maestría
+                        absoluta. No solo vendemos productos, orquestamos experiencias sensoriales que perduran en el
+                        tiempo.</p>
+                    <a href="#" class="link-arrow">Descubrir el Atelier <span>&rarr;</span></a>
+                </div>
+                <div class="about-image reveal-right">
+                    <div class="image-wrapper">
+                        <!-- Placeholder for a high-end architectural or lifestyle shot -->
+                        <div class="aspect-ratio-box"
+                            style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a); position: relative;">
+                            <div
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2787&auto=format&fit=crop'); background-size: cover; opacity: 0.6;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery section-padding">
+            <div class="container container-full">
+                <div class="section-header text-center mb-large">
+                    <span class="subtitle">Curaduría</span>
+                    <h2 class="title">Colección Privada</h2>
+                    <div class="gallery-nav">
+                        <button id="prevBtn" class="nav-btn" aria-label="Anterior">&larr;</button>
+                        <button id="nextBtn" class="nav-btn" aria-label="Siguiente">&rarr;</button>
+                    </div>
+                </div>
+                <!-- Horizontal scroll layout -->
+                <div class="gallery-track-wrapper">
+                    <div class="gallery-track" id="galleryTrack">
+                        <!-- Item 1 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Luces de la Ciudad</h4>
+                                <span>Edición Limitada</span>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Invierno Alpino</h4>
+                                <span>Signature Series</span>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Minimalismo Puro</h4>
+                                <span>Modern</span>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Arquitectura Viva</h4>
+                                <span>Atemporal</span>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1574516801905-1a89b88d363d?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Esencia Dorada</h4>
+                                <span>Premium</span>
+                            </div>
+                        </div>
+                        <!-- New Items -->
+                        <!-- Item 6 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1617038224558-28ad3fb558a7?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Chromatina</h4>
+                                <span>Vanguardia</span>
+                            </div>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Velvet Night</h4>
+                                <span>Nocturne</span>
+                            </div>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Silk Route</h4>
+                                <span>Exotic</span>
+                            </div>
+                        </div>
+                        <!-- Item 9 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2789&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Cuero Real</h4>
+                                <span>Heritage</span>
+                            </div>
+                        </div>
+                        <!-- Item 10 -->
+                        <div class="gallery-item">
+                            <div class="gallery-img"
+                                style="background-image: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2787&auto=format&fit=crop'); background-size: cover;">
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Oceanic Depth</h4>
+                                <span>Blue Series</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section-padding bg-alt">
+            <div class="container contact-container">
+                <div class="contact-info reveal-left">
+                    <span class="eyebrow">Contacto</span>
+                    <h2 class="title">Hablemos de Perfección</h2>
+                    <p>Nuestro equipo de concierge está a su disposición para atender cualquier solicitud. Complete el
+                        formulario para iniciar una conversación privada.</p>
+
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <h4>Ubicación</h4>
+                            <p>Calle Serrano, 45<br>28001 Madrid, España</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Directo</h4>
+                            <p>+34 91 999 8888</p>
+                            <p>concierge@elegance.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper reveal-right">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Nombre Completo</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Correo Electrónico</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder=" ">
+                            <label for="phone">Teléfono (Opcional)</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                            <label for="message">Mensaje</label>
+                            <div class="line"></div>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-submit">
+                            <span class="btn-text">Enviar Mensaje</span>
+                            <span class="btn-loading">Enviando...</span>
+                        </button>
+
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">ELEGANCE</a>
+                <p>Curando lo excepcional para los exigentes. Una marca que trasciende el tiempo y las tendencias.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#features">Filosofía</a></li>
+                    <li><a href="#gallery">Colecciones</a></li>
+                    <li><a href="#about">Atelier</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Social</h4>
+                <div class="social-icons">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2024 ELEGANCE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
