@@ -186,7 +186,8 @@ ul {
 }
 
 /* Components */
-.btn-primary {
+.btn-primary,
+.btn-secondary {
     display: inline-block;
     padding: 1rem 2.5rem;
     background-color: transparent;
@@ -199,9 +200,12 @@ ul {
     overflow: hidden;
     transition: var(--transition-medium);
     z-index: 1;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.btn-primary::after {
+.btn-primary::after,
+.btn-secondary::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -213,28 +217,20 @@ ul {
     z-index: -1;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-secondary:hover {
     color: var(--bg-color);
 }
 
-.btn-primary:hover::after {
+.btn-primary:hover::after,
+.btn-secondary:hover::after {
     height: 100%;
 }
 
-.btn-secondary {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    color: var(--text-primary);
-    font-family: var(--font-accent);
-    letter-spacing: 1px;
-    font-size: 0.8rem;
-    border-bottom: 1px solid transparent;
-}
-
-.btn-secondary:hover {
-    border-bottom-color: var(--accent-color);
-    color: var(--accent-color);
-}
+/* Optional: Make secondary slightly different (e.g. white vs gold) if needed, 
+   but user asked for "same design", so keeping them identical is safest. 
+   If distinction is needed later, we can add it. 
+*/
 
 .link-arrow {
     display: inline-flex;
@@ -275,7 +271,10 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
+    padding: 0 4rem;
+    /* Push logo and menu to the edges */
+    max-width: none;
 }
 
 .logo {
@@ -323,7 +322,28 @@ ul {
     position: relative;
     overflow: hidden;
     /* Deep Navy Radial Gradient */
+    /* Deep Navy Radial Gradient fallback */
     background: radial-gradient(circle at center, var(--surface-accent) 0%, var(--bg-color) 100%);
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.6;
+    /* Slight transparency to blend with background color */
+}
+
+/* Fallback/Overlay styles */
+.hero-bg {
+    display: none;
+    /* Hide the old static bg if it still exists in DOM, though we removed it */
 }
 
 .hero-overlay {
@@ -332,8 +352,9 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradient to fade into the next section */
-    background: linear-gradient(to bottom, rgba(2, 6, 23, 0.2), var(--bg-color));
+    /* Gradient to ensure text readability */
+    background: linear-gradient(to bottom, rgba(2, 6, 23, 0.4), var(--bg-color));
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -346,24 +367,36 @@ ul {
 
 .hero-title {
     font-size: 5rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 2rem;
+    letter-spacing: -2px;
 }
 
 .hero-title em {
     font-style: italic;
     color: var(--accent-color);
+    font-family: var(--font-heading);
+    font-weight: 400;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 500px;
-    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: var(--text-secondary);
 }
 
 .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
+    justify-content: center;
 }
 
 .scroll-indicator {
@@ -415,53 +448,195 @@ ul {
     }
 }
 
-/* Features */
+/* Features (Bento Grid) */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-rows: auto auto;
+    /* Allow for different row heights */
+    gap: 1.5rem;
     margin-top: 4rem;
 }
 
 .feature-card {
     background-color: var(--surface-color);
-    padding: 3rem 2rem;
+    padding: 2.5rem;
     border: 1px solid var(--border-color);
+    border-radius: 24px;
+    /* Rounded corners for Bento style */
     transition: var(--transition-slow);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
+/* Feature Span Utilities for Bento Layout */
+.feature-card:first-child {
+    grid-column: span 2;
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    background-color: var(--surface-accent);
+.feature-card:last-child {
+    grid-column: span 3;
+    /* Full width for the last one or adjust as needed */
 }
 
-.feature-card:hover::before {
-    transform: translateX(100%);
+/* On mobile, stack everything */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card:first-child,
+    .feature-card:last-child {
+        grid-column: span 1;
+    }
 }
 
-.icon-box {
-    margin-bottom: 2rem;
+/* Social Proof (Testimonials & Marquee) */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    position: relative;
+    transition: var(--transition-medium);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background: var(--surface-accent);
+}
+
+.quote-icon {
+    font-size: 4rem;
     color: var(--accent-color);
+    opacity: 0.2;
+    font-family: var(--font-heading);
+    line-height: 0.5;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author h5 {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0px;
+}
+
+.author span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.logo-marquee {
+    margin-top: 5rem;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 4rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+
+.marquee-content span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.5;
+    transition: var(--transition-medium);
+    cursor: default;
+}
+
+.marquee-content span:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Feature Card Internals */
+.icon-box {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.03);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    transition: var(--transition-medium);
+}
+
+.feature-card:hover .icon-box {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
 }
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+
 
 /* About */
 .bg-alt {
@@ -493,7 +668,9 @@ ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    /* Added spacing to separate from images */
 }
 
 .nav-btn {
@@ -536,8 +713,8 @@ ul {
     display: flex;
     gap: 2rem;
     width: max-content;
-    padding: 0 var(--container-width);
-    /* Center illusion */
+    padding: 0 4rem;
+    margin: 0 auto;
     scroll-snap-type: x mandatory;
 }
 
@@ -939,6 +1116,7 @@ ul {
         display: none;
     }
 }
+
 /* Estilos base del hero */
 .hero {
     position: relative;
@@ -1014,38 +1192,16 @@ ul {
         opacity: 1;
         transform: translateY(0);
     }
+
     50% {
         opacity: 1;
         transform: translateY(15px);
     }
+
     100% {
         opacity: 0;
         transform: translateY(25px);
     }
-}
-
-/* Estilos para la sección destino */
-.next-section {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 0;
-}
-
-.next-section h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.next-section p {
-    font-size: 18px;
-    opacity: 0.8;
 }
 
 /* Ajuste responsive */
@@ -1053,21 +1209,71 @@ ul {
     #section09 {
         bottom: 20px;
     }
-    
+
     #section09 a {
         width: 25px;
         height: 40px;
     }
-    
+
     #section09 a span {
         width: 25px;
         height: 40px;
         margin-left: -12.5px;
     }
-    
+
     #section09 a span::after {
         width: 3px;
         height: 8px;
         top: 8px;
+    }
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    min-height: 80vh;
+    background-color: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.display-title {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.display-title em {
+    font-family: var(--font-accent);
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.lead-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.lead-text strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .philosophy-section {
+        min-height: 60vh;
+    }
+
+    .display-title {
+        font-size: 3rem;
+    }
+
+    .lead-text {
+        font-size: 1.1rem;
     }
 }
